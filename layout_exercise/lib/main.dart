@@ -21,20 +21,19 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Layout Exercise'),
-          backgroundColor: Colors.blue[400],
-        ),
-        body: Card(
-          elevation: 1.5,
-          margin: const EdgeInsets.all(6.0),
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
+        body: Center(
+          child: Container(
+            padding: const EdgeInsets.all(8.0),
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.black12),
+              borderRadius: BorderRadius.circular(4),
+            ),
+            width: 250,
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: const <Widget>[
                 Header(),
-                SizedBox(height: 8.0),
+                SizedBox(height: 16.0),
                 Information(),
                 SizedBox(height: 16.0),
                 IconList()

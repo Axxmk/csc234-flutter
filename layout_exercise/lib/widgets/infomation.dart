@@ -13,7 +13,7 @@ class Information extends StatelessWidget {
           style: Theme.of(context).textTheme.bodyMedium,
         ),
         Text(
-          '415-555-0198',
+          '(415) 555-0198',
           style: Theme.of(context).textTheme.bodyMedium,
         ),
       ],

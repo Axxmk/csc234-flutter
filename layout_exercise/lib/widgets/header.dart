@@ -6,6 +6,7 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      // mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         const Padding(
           padding: EdgeInsets.only(right: 8.0),

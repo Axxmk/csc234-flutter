@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:layout_interactive/widgets/button_section.dart';
-import 'package:layout_interactive/widgets/text_section.dart';
 
 // widgets
 import './widgets/title_section.dart';
+import './widgets/button_section.dart';
+import './widgets/image_section.dart';
+import './widgets/text_section.dart';
 
 void main() => runApp(const MyApp());
 
@@ -36,18 +37,14 @@ class MyApp extends StatelessWidget {
           title: const Text('Layout Interactive'),
         ),
         body: ListView(
-          children: <Widget>[
-            Image.asset(
-              'images/profile.jpg',
-              height: 300,
-              fit: BoxFit.cover,
-            ),
-            const TitleSection(
+          children: const <Widget>[
+            TitleSection(
               fullName: 'Monthara Kiatruangchai',
               affiliation: 'Computer Science, KMUTT',
             ),
-            const ButtonSection(phoneNumber: '001-646-7659'),
-            const TextSection(
+            ButtonSection(phoneNumber: '001-646-7659'),
+            ImageSection(),
+            TextSection(
               text: 'Hello, my name is Monthara Kiatruangchai or you can call me Ann. '
                   'Currently, I\'m studying at KMUTT in Bachelor of Computer Science, 2nd year student. '
                   'My favourite programming languages are javascipt and python. '

@@ -18,7 +18,7 @@ class TitleSection extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
 
     return Container(
-      padding: const EdgeInsets.all(32),
+      padding: const EdgeInsets.all(30),
       child: Row(
         children: <Widget>[
           Expanded(

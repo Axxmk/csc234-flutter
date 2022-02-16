@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 // widgets
 import './widgets/custom_text_form_field.dart';
-import './widgets/button.dart';
+import './widgets/custom_alert_dialog.dart';
 
 void main() => runApp(const MyApp());
 
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch().copyWith(
           primary: Colors.deepPurple[300],
-          secondary: Colors.orange[200],
+          secondary: Colors.grey[400],
         ),
       ),
     );
@@ -47,6 +47,17 @@ class _MyHomePageState extends State<MyHomePage> {
     emailController.dispose();
     passwordController.dispose();
     super.dispose();
+  }
+
+  void _showInput(BuildContext context) {
+    showDialog(
+        context: context,
+        builder: (_) {
+          return CustomAlertDialog(
+            emailController: emailController,
+            passwordController: passwordController,
+          );
+        });
   }
 
   @override
@@ -91,10 +102,12 @@ class _MyHomePageState extends State<MyHomePage> {
               Container(
                 padding: const EdgeInsets.only(top: 8),
                 alignment: Alignment.centerRight,
-                child: Button(
-                  formKey: _formKey,
-                  emailController: emailController,
-                  passwordController: passwordController,
+                child: ElevatedButton(
+                  child: const Text('Show'),
+                  onPressed: () {
+                    _formKey.currentState?.validate();
+                    _showInput(context);
+                  },
                 ),
               )
             ],

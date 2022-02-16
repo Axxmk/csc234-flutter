@@ -25,7 +25,7 @@ class CustomTextFormField extends StatelessWidget {
         if (text == null || text.isEmpty) {
           return 'Please fill out $placeholder';
         } else if (!regex.hasMatch(text)) {
-          return 'Please enter new $placeholder';
+          return 'Please type $placeholder again';
         }
         return null;
       },
